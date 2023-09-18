@@ -1,0 +1,5 @@
+function Kitchen() {
+  return <div>kitchen</div>;
+}
+
+export default Kitchen;

@@ -1,8 +1,14 @@
-# React + Vite
+<div align='center'><img src='#'/></div>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h2>About the project</h2>
 
-Currently, two official plugins are available:
+<p>This is a Minimal Mall e-commerce website built with React and CSS. This
+website features a modern and intuitive design, with easy-to-use navigation and a
+simple shopping experience that puts the focus on the products.</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+👉 Live Demo: <a href='https://minimal-mall.vercel.app/'>Ecommerce Demo</a>
+
+<h3>Build with:</h3>
+
+» TailWind css <br>
+» React JS
