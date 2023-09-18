@@ -1,14 +1,15 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./assets/pages/Home";
-import Categories from "./assets/pages/Categories";
-import All from "./assets/pages/categories-pages/All";
-import Furnitures from "./assets/pages/categories-pages/Furnitures";
-import Electronics from "./assets/pages/categories-pages/Electronics";
-import Lamps from "./assets/pages/categories-pages/Lamps";
-import Kitchen from "./assets/pages/categories-pages/Kitchen";
-import Chairs from "./assets/pages/categories-pages/Chairs";
-import SkinCare from "./assets/pages/categories-pages/SkinCare";
-import ProductPage from "./assets/pages/ProductPage";
+import Home from "./pages/Home";
+import Categories from "./pages/Categories";
+import All from "./pages/categories-pages/All";
+import Furnitures from "./pages/categories-pages/Furnitures";
+import Electronics from "./pages/categories-pages/Electronics";
+import Lamps from "./pages/categories-pages/Lamps";
+import Kitchen from "./pages/categories-pages/Kitchen";
+import Chairs from "./pages/categories-pages/Chairs";
+import SkinCare from "./pages/categories-pages/SkinCare";
+import ProductPage from "./pages/ProductPage";
+import PageNotFound from "./pages/PageNotFound";
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
           <Route path="skin-care" element={<SkinCare />} />
         </Route>
         <Route path="categories/product/:id" element={<ProductPage />} />
+
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   );
