@@ -12,6 +12,8 @@ export default {
         lightGray: "#E9E9E9",
         blackColor: "#000",
         mainColor: "#D81414",
+        overLayColor: "rgba(0,0,0,.3)",
+        hoverOverLayColor: "rgba(0, 0, 0, 0.5)",
       },
     },
   },
