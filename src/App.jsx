@@ -10,10 +10,12 @@ import Chairs from "./pages/categories-pages/Chairs";
 import SkinCare from "./pages/categories-pages/SkinCare";
 import ProductPage from "./pages/ProductPage";
 import PageNotFound from "./pages/PageNotFound";
+import Header from "./components/Header";
 
 function App() {
   return (
     <BrowserRouter>
+      <Header />
       <Routes>
         <Route path="/" index element={<Home />} />
         <Route path="categories" element={<Categories />}>
