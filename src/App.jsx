@@ -11,11 +11,12 @@ import SkinCare from "./pages/categories-pages/SkinCare";
 import ProductPage from "./pages/ProductPage";
 import PageNotFound from "./pages/PageNotFound";
 import Header from "./components/Header";
+import News from "./components/News";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <BrowserRouter>
-      <Header />
       <Routes>
         <Route path="/" index element={<Home />} />
         <Route path="categories" element={<Categories />}>
@@ -27,10 +28,14 @@ function App() {
           <Route path="chairs" element={<Chairs />} />
           <Route path="skin-care" element={<SkinCare />} />
         </Route>
+
         <Route path="categories/product/:id" element={<ProductPage />} />
 
         <Route path="*" element={<PageNotFound />} />
       </Routes>
+      <Header />
+      <News />
+      <Footer />
     </BrowserRouter>
   );
 }
