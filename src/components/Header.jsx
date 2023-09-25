@@ -14,19 +14,21 @@ function Header() {
       <header className="fixed left-0 top-0 z-30 w-full bg-whiteColor shadow-md">
         <div className="container mx-auto">
           <div className="flex h-28 items-center justify-between px-10">
-            <Link to="/">
+            <Link to="/" onClick={() => window.scrollTo(0, 0)}>
               <img src={logo} alt="logo" className="h-24 w-24" />
             </Link>
             <nav className="flex items-center justify-evenly gap-5 text-lg uppercase">
               <Link
                 to="categories/all"
                 className="hidden hover:underline md:block"
+                onClick={() => window.scrollTo(0, 0)}
               >
                 Categories
               </Link>
               <Link
                 to="categories/product/1"
                 className="hidden hover:underline md:block"
+                onClick={() => window.scrollTo(0, 0)}
               >
                 Product page
               </Link>
@@ -50,8 +52,15 @@ function Header() {
               <AiOutlineClose onClick={() => setMobNav(!mobNav)} />
             </span>
             <nav className="flex flex-col items-center gap-5 text-2xl uppercase">
-              <Link to="categories/all">categories</Link>
-              <Link to="categories/product/1">Product page</Link>
+              <Link to="categories/all" onClick={() => setMobNav(!mobNav)}>
+                categories
+              </Link>
+              <Link
+                to="categories/product/1"
+                onClick={() => setMobNav(!mobNav)}
+              >
+                Product page
+              </Link>
             </nav>
           </div>
         )}

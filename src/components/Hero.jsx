@@ -9,8 +9,11 @@ function Hero() {
     <div className="container mx-auto px-10 pt-28">
       <div className="mt-3 grid h-[500px] grid-cols-2 grid-rows-2 gap-3 md:grid-cols-4">
         <div className="relative col-auto row-auto md:col-span-2 md:row-span-full">
-          <Link to="categories/furnitures">
-            <div className="bg-overLayColor hover:bg-hoverOverLayColor absolute left-0 top-0 h-full w-full transition-all duration-300 ease-in-out"></div>
+          <Link
+            to="categories/furnitures"
+            onClick={() => window.scrollTo(0, 0)}
+          >
+            <div className="absolute left-0 top-0 h-full w-full bg-overLayColor transition-all duration-300 ease-in-out hover:bg-hoverOverLayColor"></div>
             <img
               src={main1}
               alt="main image"
@@ -23,8 +26,8 @@ function Hero() {
         </div>
 
         <div className="relative row-auto md:row-span-full">
-          <Link to="categories/skin-care">
-            <div className="bg-overLayColor hover:bg-hoverOverLayColor absolute left-0 top-0 h-full w-full transition-all duration-300 ease-in-out"></div>
+          <Link to="categories/skin-care" onClick={() => window.scrollTo(0, 0)}>
+            <div className="absolute left-0 top-0 h-full w-full bg-overLayColor transition-all duration-300 ease-in-out hover:bg-hoverOverLayColor"></div>
             <img
               src={main2}
               alt="main image"
@@ -37,8 +40,8 @@ function Hero() {
         </div>
 
         <div className="relative">
-          <Link to="categories/kitchen">
-            <div className="bg-overLayColor hover:bg-hoverOverLayColor absolute left-0 top-0 h-full w-full transition-all duration-300 ease-in-out"></div>
+          <Link to="categories/kitchen" onClick={() => window.scrollTo(0, 0)}>
+            <div className="absolute left-0 top-0 h-full w-full bg-overLayColor transition-all duration-300 ease-in-out hover:bg-hoverOverLayColor"></div>
             <img
               src={main3}
               alt="main image"
@@ -51,8 +54,11 @@ function Hero() {
         </div>
 
         <div className="relative">
-          <Link to="categories/electronics">
-            <div className="bg-overLayColor hover:bg-hoverOverLayColor absolute left-0 top-0 h-full w-full transition-all duration-300 ease-in-out"></div>
+          <Link
+            to="categories/electronics"
+            onClick={() => window.scrollTo(0, 0)}
+          >
+            <div className="absolute left-0 top-0 h-full w-full bg-overLayColor transition-all duration-300 ease-in-out hover:bg-hoverOverLayColor"></div>
             <img
               src={main4}
               alt="main image"

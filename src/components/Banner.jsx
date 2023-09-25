@@ -25,6 +25,7 @@ function Banner({ img, title, revDirection = undefined }) {
             <Link
               to="categories/all"
               className="w-[103px] bg-black p-2.5 text-lg font-bold uppercase text-whiteColor"
+              onClick={() => window.scrollTo(0, 0)}
             >
               Shop Now
             </Link>

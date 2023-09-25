@@ -12,6 +12,7 @@ function SkinCare() {
               to={`/categories/product/${item.id}`}
               key={item.id}
               className="border-2 border-overLayColor transition-all duration-300 ease-in-out hover:border-hoverOverLayColor"
+              onClick={() => window.scrollTo(0, 0)}
             >
               <div>
                 <img

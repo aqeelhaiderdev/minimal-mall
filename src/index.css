@@ -17,6 +17,10 @@
   }
 }
 
+* {
+  scroll-behavior: smooth;
+}
+
 a.active {
   border-color: rgba(0, 0, 0, 0.5);
 }

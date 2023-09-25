@@ -10,6 +10,7 @@ export default {
         whiteColor: "#fff",
         darkGray: "#191919",
         lightGray: "#E9E9E9",
+        mediumGray: "#E5E5E5",
         blackColor: "#000",
         mainColor: "#D81414",
         overLayColor: "rgba(0,0,0,.3)",

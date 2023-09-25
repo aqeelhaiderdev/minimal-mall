@@ -22,6 +22,7 @@ function CategoriesHeader() {
           <Link
             to="/"
             className="flex items-center justify-center gap-2 text-lg"
+            onClick={() => window.scrollTo(0, 0)}
           >
             <AiOutlineArrowLeft />
             Back
@@ -37,7 +38,10 @@ function CategoriesHeader() {
               to={item.link}
               key={item.name}
               className={`border-2 border-overLayColor px-4 py-1.5 hover:border-hoverOverLayColor`}
-              onClick={() => setCurrentCat(item.name)}
+              onClick={() => {
+                setCurrentCat(item.name);
+                window.scrollTo(0, 0);
+              }}
             >
               {item.name}
             </NavLink>
