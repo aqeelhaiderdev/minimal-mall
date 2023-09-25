@@ -1,14 +1,17 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/img/logo-trim.png";
+
 import {
   AiOutlineShoppingCart,
   AiOutlineMenu,
   AiOutlineClose,
 } from "react-icons/ai";
 import { useState } from "react";
+import Cart from "./Cart";
 
 function Header() {
   const [mobNav, setMobNav] = useState(false);
+  const [cart, setCart] = useState(false);
   return (
     <>
       <header className="fixed left-0 top-0 z-30 w-full bg-whiteColor shadow-md">
@@ -37,7 +40,7 @@ function Header() {
                   <AiOutlineMenu onClick={() => setMobNav(!mobNav)} />
                 </li>
                 <li>
-                  <AiOutlineShoppingCart />
+                  <AiOutlineShoppingCart onClick={() => setCart(!cart)} />
                 </li>
               </ul>
             </nav>
@@ -64,6 +67,10 @@ function Header() {
             </nav>
           </div>
         )}
+
+        {/* Cart */}
+
+        {cart && <Cart cart={cart} cartFn={setCart} />}
       </header>
     </>
   );

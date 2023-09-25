@@ -12,7 +12,9 @@ function Home() {
       <Hero />
       <TrendingItems />
       <Banner img={mainImg1} title="Creative harmonious living" />
-      <TrendingSlider />
+      <div className="container mx-auto px-10 py-14">
+        <TrendingSlider />
+      </div>
       <Banner
         img={mainImg2}
         title="Comfortable & Elegante Living"

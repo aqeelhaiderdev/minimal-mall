@@ -5,13 +5,29 @@ import TrendingSlider from "../components/TrendingSlider";
 
 function ProductPage() {
   const { id: productId } = useParams();
-
   const product = items.find((item) => item.id === Number(productId));
 
   const [image, setImage] = useState(product.img);
+  const [quantity, setQuantity] = useState(1);
+
+  const increase = () => {
+    if (quantity >= 1) {
+      setQuantity(quantity + 1);
+    }
+  };
+  const decrease = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
+  };
+
+  const calcPrice = () => {
+    return quantity * product.price;
+  };
 
   useEffect(() => {
     setImage(product.img);
+    setQuantity(1);
   }, [product]);
 
   return (
@@ -51,18 +67,24 @@ function ProductPage() {
             <p className="text-2xl font-bold">Quantity</p>
 
             <div className="flex text-2xl">
-              <button className="border-2 border-black bg-white px-4 py-2">
+              <button
+                className="border-2 border-black bg-white px-4 py-2"
+                onClick={decrease}
+              >
                 -
               </button>
               <span className="border-2 border-x-0 border-black px-4 py-2">
-                1
+                {quantity}
               </span>
-              <button className="border-2 border-black bg-white px-4 py-2">
+              <button
+                className="border-2 border-black bg-white px-4 py-2"
+                onClick={increase}
+              >
                 +
               </button>
             </div>
 
-            <p className="text-2xl font-bold">{`${product.price} $`}</p>
+            <p className="text-2xl font-bold">{`${calcPrice()} $`}</p>
           </div>
 
           <div className="flex flex-col gap-4 md:flex-row">
@@ -91,7 +113,9 @@ function ProductPage() {
         </div>
       </div>
 
-      <TrendingSlider />
+      <div className="container mx-auto px-0 py-14 sm:px-10">
+        <TrendingSlider />
+      </div>
     </div>
   );
 }
