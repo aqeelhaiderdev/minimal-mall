@@ -8,10 +8,12 @@ import {
 } from "react-icons/ai";
 import { useState } from "react";
 import Cart from "./Cart";
+import { useCart } from "../contexts/CartContext";
 
 function Header() {
   const [mobNav, setMobNav] = useState(false);
   const [cart, setCart] = useState(false);
+  const { cartItem } = useCart();
   return (
     <>
       <header className="fixed left-0 top-0 z-30 w-full bg-whiteColor shadow-md">
@@ -39,8 +41,13 @@ function Header() {
                 <li className="block md:hidden">
                   <AiOutlineMenu onClick={() => setMobNav(!mobNav)} />
                 </li>
-                <li>
+                <li className="relative cursor-pointer">
                   <AiOutlineShoppingCart onClick={() => setCart(!cart)} />
+                  {cartItem.length > 0 && (
+                    <span className="absolute right-[-8px] top-[-8px] flex h-4 w-4 items-center justify-center rounded-full bg-mainColor text-sm text-white">
+                      {cartItem.length}
+                    </span>
+                  )}
                 </li>
               </ul>
             </nav>

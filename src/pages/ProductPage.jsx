@@ -93,7 +93,15 @@ function ProductPage() {
           <div className="flex flex-col gap-4 md:flex-row">
             <button
               className="h-14 w-full border-2 border-black text-xl font-medium uppercase transition-all duration-300 ease-in-out hover:bg-black hover:text-white md:w-1/2 lg:text-2xl"
-              onClick={() => addToCart(product)}
+              onClick={() =>
+                addToCart({
+                  id: product.id,
+                  img: product.img,
+                  description: product.description,
+                  price: calcPrice(),
+                  quantity: quantity,
+                })
+              }
             >
               Add to cart
             </button>
