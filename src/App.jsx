@@ -13,30 +13,33 @@ import PageNotFound from "./pages/PageNotFound";
 import Header from "./components/Header";
 import News from "./components/News";
 import Footer from "./components/Footer";
+import { CartProvider } from "./contexts/CartContext";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" index element={<Home />} />
-        <Route path="categories" element={<Categories />}>
-          <Route path="all" element={<All />} />
-          <Route path="furnitures" element={<Furnitures />} />
-          <Route path="electronics" element={<Electronics />} />
-          <Route path="lamps" element={<Lamps />} />
-          <Route path="kitchen" element={<Kitchen />} />
-          <Route path="chairs" element={<Chairs />} />
-          <Route path="skin-care" element={<SkinCare />} />
-        </Route>
+    <CartProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" index element={<Home />} />
+          <Route path="categories" element={<Categories />}>
+            <Route path="all" element={<All />} />
+            <Route path="furnitures" element={<Furnitures />} />
+            <Route path="electronics" element={<Electronics />} />
+            <Route path="lamps" element={<Lamps />} />
+            <Route path="kitchen" element={<Kitchen />} />
+            <Route path="chairs" element={<Chairs />} />
+            <Route path="skin-care" element={<SkinCare />} />
+          </Route>
 
-        <Route path="categories/product/:id" element={<ProductPage />} />
+          <Route path="categories/product/:id" element={<ProductPage />} />
 
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
-      <Header />
-      <News />
-      <Footer />
-    </BrowserRouter>
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+        <Header />
+        <News />
+        <Footer />
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 

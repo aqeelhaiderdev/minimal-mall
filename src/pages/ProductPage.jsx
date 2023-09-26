@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { items } from "../assets/data/AllData";
 import { useEffect, useState } from "react";
 import TrendingSlider from "../components/TrendingSlider";
+import { useCart } from "../contexts/CartContext";
 
 function ProductPage() {
   const { id: productId } = useParams();
@@ -9,6 +10,8 @@ function ProductPage() {
 
   const [image, setImage] = useState(product.img);
   const [quantity, setQuantity] = useState(1);
+
+  const { addToCart } = useCart();
 
   const increase = () => {
     if (quantity >= 1) {
@@ -88,7 +91,10 @@ function ProductPage() {
           </div>
 
           <div className="flex flex-col gap-4 md:flex-row">
-            <button className="h-14 w-full border-2 border-black text-xl font-medium uppercase transition-all duration-300 ease-in-out hover:bg-black hover:text-white md:w-1/2 lg:text-2xl">
+            <button
+              className="h-14 w-full border-2 border-black text-xl font-medium uppercase transition-all duration-300 ease-in-out hover:bg-black hover:text-white md:w-1/2 lg:text-2xl"
+              onClick={() => addToCart(product)}
+            >
               Add to cart
             </button>
             <button className="h-14 w-full border-2 border-mainColor bg-mainColor text-xl text-white transition-all duration-300 ease-in-out hover:bg-mediumGray hover:text-mainColor md:w-1/2 md:text-2xl">
