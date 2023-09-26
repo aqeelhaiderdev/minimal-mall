@@ -17,10 +17,7 @@ function Cart({ cart, cartFn }) {
           <div className="flex items-center justify-between text-xl font-bold">
             <h2>Your Shopping Cart ( {cartItem.length} )</h2>
             <span>
-              <AiOutlineClose
-                onClick={() => cartFn(!cart)}
-                className="cursor-pointer"
-              />
+              <AiOutlineClose onClick={() => cartFn(!cart)} className="" />
             </span>
           </div>
           {cartItem.length < 1 ? (
